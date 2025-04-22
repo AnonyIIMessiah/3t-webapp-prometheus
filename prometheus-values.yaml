@@ -35,8 +35,8 @@ alertmanager:
     receivers:
     - name: 'slack-notifications'
       slack_configs:
-      - api_url: 'https://hooks.slack.com/services/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'
-        channel: '#alerts'
+      - channel: '#alerts'
+        api_url: 'your-slack-webhook-url'
         send_resolved: true
         title: "{{ range .Alerts }}{{ .Annotations.summary }}\n{{ end }}"
         text: "{{ range .Alerts }}{{ .Annotations.description }}\n{{ end }}"
